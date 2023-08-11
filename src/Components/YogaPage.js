@@ -7,7 +7,6 @@ import SeaImage from "../Assest/Img/sea.jpeg";
 import ForestImage from "../Assest/Img/forest.jpeg";
 import RainImage from "../Assest/Img/rain.jpeg";
 import FireImage from "../Assest/Img/fire.jpeg";
-
 import LakeSong from "../Assest/Songs/lake.mp3";
 import SeaSong from "../Assest/Songs/sea.mp3";
 import ForestSong from "../Assest/Songs/forest.mp3";
@@ -49,6 +48,14 @@ function YogaPage() {
       if (audioRef.current) {
         audioRef.current.play();
         setShowTimer(true);
+
+        const timer = setInterval(() => {
+          setSeconds(prevSeconds => Math.max(prevSeconds - 1, 0));
+        }, 1000);
+
+        return () => {
+          clearInterval(timer);
+        };
       }
     } else {
       if (audioRef.current) {
@@ -93,7 +100,6 @@ function YogaPage() {
     flexDirection: 'column',
     alignItems: 'center',
     justifyContent: 'center',
-  
   };
 
   return (
@@ -123,8 +129,7 @@ function YogaPage() {
         </Link>
       </div>
     </div>
-  );}
+  );
+}
 
 export default YogaPage;
-
-
