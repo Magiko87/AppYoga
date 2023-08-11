@@ -3,9 +3,12 @@ import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import Home from './Components/Home';
 import YogaPage from './Components/YogaPage';
 
+
 function App() {
   return (
     <div className="App">
+      
+      
       <Router>
         <Routes>
           <Route path="/" element={<Home />} />
