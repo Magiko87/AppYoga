@@ -1,0 +1,183 @@
+.App {
+  text-align: center;
+}
+
+.App-header {
+  background: rgb(249, 60, 0);
+  background: linear-gradient(
+    90deg,
+    rgba(249, 60, 0, 1) 0%,
+    rgba(255, 184, 45, 1) 57%,
+    rgba(255, 239, 21, 1) 100%
+  );
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+}
+
+.logo-container {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  margin-bottom: 20px;
+}
+
+.App-logo {
+  height: 300px;
+  border-radius: 50%;
+  margin-top: 20px;
+}
+
+.img-container {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  margin-bottom: 20px;
+}
+
+.App-img {
+  height: 200px;
+  margin-top: -60px;
+}
+
+.button-container {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  margin-top: 20px;
+}
+
+.normal-button,
+.hard-button,
+.very-hard-button,
+.soft-button,
+.very-soft-button {
+  padding: 10px 20px;
+  margin: 10px;
+  background-color: #ff3300;
+  color: rgb(0, 0, 0);
+  border: none;
+  border-radius: 50%;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.normal-button:hover,
+.hard-button:hover,
+.very-hard-button:hover,
+.soft-button:hover,
+.very-soft-button:hover {
+  background-color: #b33900;
+  color: yellow;
+  transform: scale(1.2);
+}
+.footer {
+  color: rgb(0, 0, 0);
+  display: flex;
+  justify-content: center;
+  font-size: large;
+  padding: 0px;
+  font-family: "Times New Roman", Times, serif;
+  font-weight: 900;
+  background: rgb(249, 60, 0);
+  background: linear-gradient(
+    90deg,
+    rgba(249, 60, 0, 1) 0%,
+    rgba(255, 184, 45, 1) 57%,
+    rgba(255, 239, 21, 1) 100%
+  );
+}
+
+.normal-button:active,
+.hard-button:active,
+.very-hard-button:active,
+.soft-button:active,
+.very-soft-button:active {
+  background-color: rgb(234, 215, 75);
+  color: #ff0000;
+}
+.home-button{
+ width: 100px;
+ height: 50px;
+ font-weight: 600;
+  font-size: large;
+ color: rgba(0, 0, 0, 0.379);
+  background-color: rgba(255, 255, 255, 0.50);
+ border: none;
+  border-radius: 50%;
+  margin-top: 300px;
+  
+}
+.home-button:hover{
+  background-color: white;
+  color: black;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  transform: scale(1.2);
+}
+.home-button:active{
+  background-color: black;
+  color: white;
+}
+.big-counter{
+  color: rgba(255, 255, 255, 0.50);
+  font-weight: 900;
+  font-size: 80px;
+  margin-top: 40px;
+  margin-bottom: 30px;
+
+}
+.btn-add, .btn-rem{
+  width: 50px;
+  height: 30px;
+  color: rgba(0, 0, 0, 0.379);
+  background-color: rgba(255, 255, 255, 0.50);
+  border: none;
+  margin: 20px;
+  font-weight: 600;
+  font-size: x-large;
+  cursor: pointer;
+  border-radius: 50px;
+}
+.btn-rem:hover{
+  background-color: white;
+  color: black;
+  }
+.btn-add:hover{
+  background-color: white;
+  color: black;
+
+}
+.btn-rem:active{
+  background-color: black;
+  color: white;
+}
+.btn-add:active{
+  background-color: black;
+  color: white;
+
+}
+.btn-play-pause{width:100px;
+  height: 30px;
+  color: rgba(0, 0, 0, 0.379);
+  background-color: rgba(255, 255, 255, 0.50);
+  border: none;
+  margin: 20px;
+  font-weight: 600;
+  font-size: x-large;
+  cursor: pointer;
+  border-radius: 50px;
+  
+}
+.btn-play-pause:hover{
+  background-color: white;
+  color: black;
+}
+.btn-play-pause:active{
+  background-color: black;
+  color: white;
+}
