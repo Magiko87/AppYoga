@@ -30,55 +30,69 @@ function YogaPage() {
   const audioRef = useRef(null);
 
   const [seconds, setSeconds] = useState(selectedOption.duration);
+  const handleAudioEnded = () => {
+    setIsPlaying(false);
+    setShowTimer(false);
+    setSeconds(0);
+  };
+  // Logica del timer
+
+   useEffect(() => {
+    let timerInterval;
+
+    if (isPlaying) {
+      timerInterval = setInterval(() => {
+        setSeconds(prevSeconds => {
+          const newSeconds = prevSeconds - 1;
+          if (newSeconds <= 0) {
+            clearInterval(timerInterval);
+            audioRef.current.pause();
+            setIsPlaying(false);
+            setShowTimer(false);
+            return 0;
+          }
+          return newSeconds;
+        });
+      }, 1000);
+    } else {
+      clearInterval(timerInterval);
+    }
+
+    return () => {
+      clearInterval(timerInterval);
+    };
+  }, [isPlaying]);
+
 
   useEffect(() => {
     if (audioRef.current) {
-      audioRef.current.addEventListener("timeupdate", handleAudioTimeUpdate);
+      audioRef.current.addEventListener("ended", handleAudioEnded);
     }
 
     return () => {
       if (audioRef.current) {
-        audioRef.current.removeEventListener("timeupdate", handleAudioTimeUpdate);
+        audioRef.current.removeEventListener("ended", handleAudioEnded);
       }
     };
   }, []);
 
-  useEffect(() => {
-    if (isPlaying) {
-      if (audioRef.current) {
-        audioRef.current.play();
-        setShowTimer(true);
-
-        const timer = setInterval(() => {
-          setSeconds(prevSeconds => Math.max(prevSeconds - 1, 0));
-        }, 1000);
-
-        return () => {
-          clearInterval(timer);
-        };
-      }
-    } else {
-      if (audioRef.current) {
-        audioRef.current.pause();
-        setShowTimer(false);
-      }
-    }
-  }, [isPlaying]);
-
-  const handleAudioTimeUpdate = () => {
-    if (audioRef.current) {
-      const currentTime = audioRef.current.currentTime;
-      setSeconds(Math.max(selectedOption.duration - Math.floor(currentTime), 0));
-    }
-  };
+  
 
   const handlePlayPauseClick = () => {
+    if (!isPlaying) {
+      audioRef.current.currentTime = 0; // Rewind audio to the beginning
+      audioRef.current.play();
+      setSeconds(selectedOption.duration);
+      setShowTimer(true);
+    } else {
+      audioRef.current.pause();
+      setShowTimer(false);
+      setSeconds(selectedOption.duration);
+    }
     setIsPlaying(!isPlaying);
   };
 
-  const handleTimeUp = () => {
-    setShowTimer(false);
-  };
+ 
 
   const handleAddMinute = () => {
     if (!isPlaying) {
@@ -120,7 +134,7 @@ function YogaPage() {
       </div>
       
       <div className="audio-player">
-        <audio ref={audioRef} src={selectedOption.music}></audio>
+        <audio ref={audioRef} src={selectedOption.music} loop></audio>
       </div>
      
       <div className="home">
