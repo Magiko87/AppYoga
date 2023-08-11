@@ -7,6 +7,7 @@ import SeaImage from "../Assest/Img/sea.jpeg";
 import ForestImage from "../Assest/Img/forest.jpeg";
 import RainImage from "../Assest/Img/rain.jpeg";
 import FireImage from "../Assest/Img/fire.jpeg";
+
 import LakeSong from "../Assest/Songs/lake.mp3";
 import SeaSong from "../Assest/Songs/sea.mp3";
 import ForestSong from "../Assest/Songs/forest.mp3";
@@ -92,6 +93,7 @@ function YogaPage() {
     flexDirection: 'column',
     alignItems: 'center',
     justifyContent: 'center',
+  
   };
 
   return (
@@ -122,5 +124,7 @@ function YogaPage() {
       </div>
     </div>
   );}
-g
+
 export default YogaPage;
+
+
