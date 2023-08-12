@@ -1,8 +1,9 @@
+//---> Import delle librerie React e FontAwesome
 import React from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faPlay, faPause } from '@fortawesome/free-solid-svg-icons';
 
-
+//---> Componente per i pulsanti di controllo
 function ControlButtons({ isPlaying, handleAdjustTime, handlePlayPauseClick }) {
   return (
       <>

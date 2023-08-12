@@ -1,12 +1,11 @@
+//---> Import di stili CSS e risorse come immagini
 import "../App.css"
 import logo from "../Assets/Img/g1Y8.gif"
 import img from "../Assets/Img/img.png";
 import { Link } from 'react-router-dom';
 import React, { useState } from 'react';
 
-
-
-
+//---> Componente App
 function App() {
   const [isLoading, setIsLoading] = useState(false); // Stato per il caricamento
 

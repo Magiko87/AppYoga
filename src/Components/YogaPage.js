@@ -1,3 +1,5 @@
+// Componente YogaPage
+
 import React, { useState, useRef, useEffect } from 'react';
 import { useParams, } from 'react-router-dom';
 import Timer from './Timer';
@@ -15,7 +17,7 @@ import RainSong from "../Assets/Songs/rain.mp3";
 import FireSong from "../Assets/Songs/fire.mp3";
 import Loader from './Loader';
 
-//--->Elenco opzioni yoga
+//---> Elenco delle opzioni yoga
 const yogaOptions = [
   { id: 1, image: LakeImage, music: LakeSong, duration: 600 },
   { id: 2, image: SeaImage, music: SeaSong, duration: 1200 },
@@ -94,7 +96,7 @@ function YogaPage() {
     alignItems: 'center',
     justifyContent: 'center',
   };
-  
+  //--->Inserimento Componenti
   return (
     <div style={pageStyle} className="yoga-page">
        {remainingTime === null ? (

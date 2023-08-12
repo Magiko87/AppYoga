@@ -1,3 +1,5 @@
+//---> Componente Timer
+
 import React from 'react';
 
 function Timer({ remainingTime }) {
