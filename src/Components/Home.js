@@ -32,7 +32,7 @@ function App() {
           <button className="hard-button">Hard Stress</button>
           </Link>
           <Link to={`/yogapage/5`} onClick={() => setIsLoading(true)}>
-          <button className="very-hard-button">Very Hard Stress</button>
+          <button className="very-hard-button ">Very Hard Stress</button>
         </Link>
           
         </div>

@@ -13,6 +13,7 @@ import SeaSong from "../Assets/Songs/sea.mp3";
 import ForestSong from "../Assets/Songs/forest.mp3";
 import RainSong from "../Assets/Songs/rain.mp3";
 import FireSong from "../Assets/Songs/fire.mp3";
+import Loader from './Loader';
 
 //--->Elenco opzioni yoga
 const yogaOptions = [
@@ -96,6 +97,10 @@ function YogaPage() {
   
   return (
     <div style={pageStyle} className="yoga-page">
+       {remainingTime === null ? (
+        <Loader />
+      ) : (
+        <>
       <Timer remainingTime={remainingTime} />
       <ControlButtons
         isPlaying={isPlaying}
@@ -110,7 +115,8 @@ function YogaPage() {
         audioRef={audioRef}
         selectedOption={selectedOption}
       />
-      
+     </>
+      )}
     </div>
   );
 }
