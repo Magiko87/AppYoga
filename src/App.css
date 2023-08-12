@@ -30,7 +30,7 @@
 .App-logo {
   height: 300px;
   border-radius: 50%;
-  margin-top: 20px;
+  margin-top: 5px;
 }
 
 .img-container {
@@ -42,7 +42,7 @@
 
 .App-img {
   height: 200px;
-  margin-top: -60px;
+  margin-top: -10px;
 }
 
 .button-container {
@@ -118,7 +118,7 @@
  background-color: rgba(255, 255, 255, 0.50);
  border: none;
  border-radius: 50%;
- margin-bottom: 100px;
+ margin-bottom: 150px;
  text-decoration: none;
   display: flex;
   justify-content: center; 
@@ -145,12 +145,13 @@
   font-weight: 900;
   font-size: 80px;
   margin-top: 350px;
-  margin-bottom: 40px;
+  margin-bottom: 50px;
   
 
 }
 .control {
   display: flex; 
+ margin-top: -50px;
   
 }
 
@@ -191,7 +192,8 @@
   color: rgba(0, 0, 0, 0.379);
   background-color: rgba(255, 255, 255, 0.50);
   border: none;
-  margin: 20px;
+  margin:20px;
+  margin-bottom: -30px;
   font-weight: 600;
   font-size: x-large;
   cursor: pointer;
