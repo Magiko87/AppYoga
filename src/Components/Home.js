@@ -2,8 +2,14 @@ import "../App.css"
 import logo from "../Assest/Img/g1Y8.gif"
 import img from "../Assest/Img/img.png";
 import { Link } from 'react-router-dom';
+import React, { useState } from 'react';
+
+
+
 
 function App() {
+  const [isLoading, setIsLoading] = useState(false); // Stato per il caricamento
+
   return (
     <div className="App">
       <header className="App-header">
@@ -12,20 +18,20 @@ function App() {
           <img src={logo} className="App-logo" alt="logo" />
         </div>
         <div className="button-container">
-          <Link to={`/yogapage/1`}>
+          <Link to={`/yogapage/1`} onClick={() => setIsLoading(true)}>
             <button className="very-soft-button">Very Soft Stress</button>
           </Link>
 
-           <Link to={`/yogapage/2`}>
+           <Link to={`/yogapage/2`} onClick={() => setIsLoading(true)}>
           <button className="soft-button">Soft Stress</button>
           </Link>
-          <Link to={`/yogapage/3`}>
+          <Link to={`/yogapage/3`} onClick={() => setIsLoading(true)}>
           <button className="normal-button">Normal Stress</button>
           </Link>
-          <Link to={`/yogapage/4`}>
+          <Link to={`/yogapage/4`} onClick={() => setIsLoading(true)}>
           <button className="hard-button">Hard Stress</button>
           </Link>
-          <Link to={`/yogapage/5`}>
+          <Link to={`/yogapage/5`} onClick={() => setIsLoading(true)}>
           <button className="very-hard-button">Very Hard Stress</button>
         </Link>
           
@@ -34,8 +40,8 @@ function App() {
       <footer className="footer">
       <p> &copy; Daniele Camodeca-®Copyright </p>
     </footer>
+    {isLoading && <div className="loader">Loading...</div>} 
     </div>
   );
 }
-
 export default App;
