@@ -1,4 +1,4 @@
-# Yoga Page App
+# Yoga Web App
 
 Welcome to the Yoga Page App! This app allows users to choose different yoga options with accompanying background images and music.
 
