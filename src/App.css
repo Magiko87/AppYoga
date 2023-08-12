@@ -1,5 +1,6 @@
 .App {
   text-align: center;
+  margin-top: -50px;
 }
 
 .App-header {
@@ -84,7 +85,6 @@
   display: flex;
   justify-content: center;
   font-size: large;
-  padding: 0px;
   font-family: "Times New Roman", Times, serif;
   font-weight: 900;
   background: rgb(249, 60, 0);
@@ -93,7 +93,11 @@
     rgba(249, 60, 0, 1) 0%,
     rgba(255, 184, 45, 1) 57%,
     rgba(255, 239, 21, 1) 100%
+ 
   );
+  border-bottom :120px;
+  
+  
 }
 
 .normal-button:active,
