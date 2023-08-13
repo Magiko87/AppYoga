@@ -28,12 +28,6 @@ const yogaOptions = [
 function YogaPage() {
   const { optionId } = useParams();
   const selectedOption = yogaOptions.find(option => option.id === parseInt(optionId));
-<<<<<<< HEAD
-  
-  const [imagesLoaded, setImagesLoaded] = useState(false);
-=======
-
->>>>>>> aa8390c090bd3238e4e462a8cc075513a2f3d6a4
   const [isPlaying, setIsPlaying] = useState(false);
   const [remainingTime, setRemainingTime] = useState(selectedOption.duration);
   const audioRef = useRef(null);
@@ -62,54 +56,38 @@ function YogaPage() {
   const minutes = Math.floor(remainingTime / 60);
   const seconds = remainingTime % 60;
   const formattedTime = `${isNaN(minutes) ? '00' : (minutes < 10 ? '0' : '') + minutes}:${isNaN(seconds) ? '00' : (seconds < 10 ? '0' : '') + seconds}`;
-<<<<<<< HEAD
-  
+
   useEffect(() => {
-    const imagePromises = yogaOptions.map(option => {
-      const image = new Image();
-      image.src = option.image;
-      return new Promise(resolve => {
-        image.onload = () => resolve();
-      });
-    });
+    if (isPlaying && remainingTime > 0) {
+      const timerInterval = setInterval(() => {
+        setRemainingTime(prevTime => Math.max(prevTime - 1, 0));
+      }, 1000);
 
-    Promise.all(imagePromises)
-      .then(() => {
-        setIsLoading(false);
-        setImagesLoaded(true);
-      })
-      .catch(error => {
-        console.error("Error loading images:", error);
-      });
-  }, []);
+      return () => {
+        clearInterval(timerInterval);
+      };
+    }
+  }, [isPlaying, remainingTime]);
 
- 
-
-//---> Play/Pause
-=======
-
-
->>>>>>> aa8390c090bd3238e4e462a8cc075513a2f3d6a4
   const handlePlayPauseClick = () => {
     if (!isPlaying) {
       audioRef.current.currentTime = 0;
       audioRef.current.play();
-      setIsPlaying(true);
     } else {
       audioRef.current.pause();
-      setIsPlaying(false);
     }
+    setIsPlaying(!isPlaying);
   };
 
   const handleAdjustTime = (amount) => {
     if (!isPlaying) {
       setRemainingTime(prevTime => {
         const newTime = Math.max(prevTime + amount, 0);
-        audioRef.current.currentTime = 0;
         return newTime;
       });
     }
   };
+
   const pageStyle = {
     background: `url('${selectedOption.image}') no-repeat center center fixed`,
     backgroundSize: 'cover',
@@ -119,18 +97,12 @@ function YogaPage() {
     alignItems: 'center',
     justifyContent: 'center',
   };
+
   return (
     <div style={pageStyle} className="yoga-page">
-<<<<<<< HEAD
-    {isLoading || !imagesLoaded ? (
-      <Loader />
-    ) : (
-      
-=======
       {isLoading || !imagesLoaded ? (
         <Loader />
       ) : (
->>>>>>> aa8390c090bd3238e4e462a8cc075513a2f3d6a4
         <>
           <Timer remainingTime={remainingTime} />
           <ControlButtons
