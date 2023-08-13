@@ -232,9 +232,9 @@
   .soft-button:active,
   .very-soft-button:active 
    {
-    background-color: transparent;
-    color: rgba(0, 0, 0, 0.379);
-    box-shadow:none
+    background-color: transparent !important;
+    color: rgba(0, 0, 0, 0.379) !important;
+    box-shadow:none !important;
     
   }
   .container {
