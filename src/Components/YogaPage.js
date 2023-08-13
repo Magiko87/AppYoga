@@ -30,7 +30,7 @@ function YogaPage() {
   const { optionId } = useParams();
   const selectedOption = yogaOptions.find(option => option.id === parseInt(optionId));
   
-
+  const [imagesLoaded, setImagesLoaded] = useState(false);
   const [isPlaying, setIsPlaying] = useState(false);
   const [remainingTime, setRemainingTime] = useState(selectedOption.duration);
   const audioRef = useRef(null);
@@ -39,6 +39,27 @@ function YogaPage() {
   const seconds = remainingTime % 60;
   const formattedTime = `${isNaN(minutes) ? '00' : (minutes < 10 ? '0' : '') + minutes}:${isNaN(seconds) ? '00' : (seconds < 10 ? '0' : '') + seconds}`;
   
+  useEffect(() => {
+    const imagePromises = yogaOptions.map(option => {
+      const image = new Image();
+      image.src = option.image;
+      return new Promise(resolve => {
+        image.onload = () => resolve();
+      });
+    });
+
+    Promise.all(imagePromises)
+      .then(() => {
+        setIsLoading(false);
+        setImagesLoaded(true);
+      })
+      .catch(error => {
+        console.error("Error loading images:", error);
+      });
+  }, []);
+
+ 
+
 //---> Play/Pause
   const handlePlayPauseClick = () => {
     if (!isPlaying) {
@@ -99,9 +120,10 @@ function YogaPage() {
   //--->Inserimento Componenti
   return (
     <div style={pageStyle} className="yoga-page">
-       {remainingTime === null ? (
-        <Loader />
-      ) : (
+    {isLoading || !imagesLoaded ? (
+      <Loader />
+    ) : (
+      
         <>
       <Timer remainingTime={remainingTime} />
       <ControlButtons
