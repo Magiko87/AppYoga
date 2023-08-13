@@ -155,7 +155,8 @@
   
 }
 
-.btn-add, .btn-rem{
+.btn-add, 
+.btn-rem{
   width: 50px;
   height: 30px;
   color: rgba(0, 0, 0, 0.379);
@@ -166,27 +167,23 @@
   font-size: x-large;
   cursor: pointer;
   border-radius: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
-.btn-rem:hover{
-  background-color: white;
-  color: black;
-  box-shadow: 0px 4px 7px rgba(0, 0, 0, 1.1);
-  }
+.btn-rem:hover,
 .btn-add:hover{
   background-color: white;
   color: black;
   box-shadow: 0px 4px 7px rgba(0, 0, 0, 1.1);
+  }
 
-}
-.btn-rem:active{
-  background-color: black;
-  color: white;
-}
+.btn-rem:active,
 .btn-add:active{
   background-color: black;
   color: white;
-
 }
+
 .btn-play-pause{width:100px;
   height: 30px;
   color: rgba(0, 0, 0, 0.379);
@@ -214,25 +211,24 @@
   background-color: black;
   color: white;
 }
-.loader {
-  font-size: 24px;
-  background-color: rgb(255, 179, 0);
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  color: rgba(247, 7, 7, 0.8);
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  z-index: 9999; 
-}
+
 @media screen and (max-width: 768px) {
-  button:active {
-    outline: none; 
-    background-color: initial; 
-}
+  .btn-play-pause:hover,
+  .btn-add:hover,
+  .btn-rem:hover,
+  .home-button:hover,
+  .normal-button:hover,
+  .hard-button:hover,
+  .very-hard-button:hover,
+  .soft-button:hover,
+  .very-soft-button:hover 
+   {
+    background-color: transparent;
+    color: inherit;
+    
+  }
+  
+
   
   .container {
       margin-top: 50px; 

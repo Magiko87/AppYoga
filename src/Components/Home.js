@@ -39,7 +39,7 @@ function App() {
       <footer className="footer">
       <p> &copy; Daniele Camodeca-®Copyright </p>
     </footer>
-    {isLoading && <div className="loader">Loading...</div>} 
+  
     </div>
   );
 }
