@@ -1,6 +1,6 @@
 .App {
   text-align: center;
-  margin-top: -50px;
+  margin-top: -25px;
 }
 
 .App-header {
@@ -30,7 +30,7 @@
 .App-logo {
   height: 300px;
   border-radius: 50%;
-  margin-top: 5px;
+  margin-top: 2px;
 }
 
 .img-container {
@@ -42,7 +42,7 @@
 
 .App-img {
   height: 200px;
-  margin-top: -10px;
+  margin-top: -40px;
 }
 
 .button-container {
@@ -221,16 +221,25 @@
   .hard-button:hover,
   .very-hard-button:hover,
   .soft-button:hover,
-  .very-soft-button:hover 
+  .very-soft-button:hover ,
+  .btn-play-pause:active,
+  .btn-add:active,
+  .btn-rem:active,
+  .home-button:active,
+  .normal-button:active,
+  .hard-button:active,
+  .very-hard-button:active,
+  .soft-button:active,
+  .very-soft-button:active 
    {
     background-color: transparent;
     color: inherit;
     
   }
-  
-
-  
   .container {
       margin-top: 50px; 
   }
 }
+/*Toglie dai dispositivi mobile active e hover 
+(background-color: transparent;
+color: inherit;)*/

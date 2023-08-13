@@ -34,7 +34,7 @@ function YogaPage() {
   const [isPlaying, setIsPlaying] = useState(false);
   const [remainingTime, setRemainingTime] = useState(selectedOption.duration);
   const audioRef = useRef(null);
-
+  const [isLoading, setIsLoading] = useState(true);
   const minutes = Math.floor(remainingTime / 60);
   const seconds = remainingTime % 60;
   const formattedTime = `${isNaN(minutes) ? '00' : (minutes < 10 ? '0' : '') + minutes}:${isNaN(seconds) ? '00' : (seconds < 10 ? '0' : '') + seconds}`;
