@@ -1,3 +1,6 @@
+//====>Component YogaPaga
+
+//--->Import
 import React, { useState, useRef, useEffect } from 'react';
 import { useParams } from 'react-router-dom';
 import Timer from './Timer';
@@ -17,6 +20,7 @@ import ForestSong from "../Assets/Songs/forest.mp3";
 import RainSong from "../Assets/Songs/rain.mp3";
 import FireSong from "../Assets/Songs/fire.mp3";
 
+//---> Definizione delle opzioni di yoga
 const yogaOptions = [
   { id: 1, image: LakeImage, music: LakeSong, duration: 600 },
   { id: 2, image: SeaImage, music: SeaSong, duration: 1200 },
@@ -25,14 +29,30 @@ const yogaOptions = [
   { id: 5, image: FireImage, music: FireSong, duration: 3000 },
 ];
 
+
 function YogaPage() {
+
+    //---> Stati per il controllo del contatore e della riproduzione
+  const [restartCounter, setRestartCounter] = useState(false);
+  const [counterFinished, setCounterFinished] = useState(false);
+
+   //---> Ottiene l'ID dell'opzione dalla route
   const { optionId } = useParams();
+
+  //---> Trova l'opzione selezionata dall'array di opzioni di yoga
   const selectedOption = yogaOptions.find(option => option.id === parseInt(optionId));
+
+   //---> Stati per la gestione della riproduzione e del tempo rimanente
   const [isPlaying, setIsPlaying] = useState(false);
   const [remainingTime, setRemainingTime] = useState(selectedOption.duration);
   const audioRef = useRef(null);
+
+  //---> Stati per il caricamento delle immagini e la durata iniziale
   const [isLoading, setIsLoading] = useState(true);
   const [imagesLoaded, setImagesLoaded] = useState(false);
+  const [initialDuration, setInitialDuration] = useState(selectedOption.duration);
+
+    //---> Effetto per il caricamento delle immagini
 
   useEffect(() => {
     const imagePromises = yogaOptions.map(option => {
@@ -53,32 +73,54 @@ function YogaPage() {
       });
   }, []);
 
+    //---> Calcolo dei minuti e dei secondi per il display del timer
   const minutes = Math.floor(remainingTime / 60);
   const seconds = remainingTime % 60;
   const formattedTime = `${isNaN(minutes) ? '00' : (minutes < 10 ? '0' : '') + minutes}:${isNaN(seconds) ? '00' : (seconds < 10 ? '0' : '') + seconds}`;
 
+  //---> Effetto per il conteggio del tempo e la gestione della riproduzione
   useEffect(() => {
     if (isPlaying && remainingTime > 0) {
       const timerInterval = setInterval(() => {
         setRemainingTime(prevTime => Math.max(prevTime - 1, 0));
       }, 1000);
-
+  
       return () => {
         clearInterval(timerInterval);
       };
+    } else if (remainingTime === 0) {
+      audioRef.current.pause();
+      setIsPlaying(false);
+      if (restartCounter) {
+        setCounterFinished(false);
+        setRemainingTime(initialDuration);
+        setRestartCounter(false);
+      } else {
+        setCounterFinished(true);
+      }
     }
-  }, [isPlaying, remainingTime]);
-
+  }, [isPlaying, remainingTime, initialDuration,restartCounter]);
+ 
+ //--->Gestore del clic su Play/Pausa
   const handlePlayPauseClick = () => {
     if (!isPlaying) {
-      audioRef.current.currentTime = 0;
-      audioRef.current.play();
+      if (counterFinished) {
+        setRestartCounter(true);
+      } else {
+        if (audioRef.current) {
+          audioRef.current.currentTime = 0;
+          audioRef.current.play();
+        }
+      }
     } else {
-      audioRef.current.pause();
+      if (audioRef.current) {
+        audioRef.current.pause();
+      }
     }
     setIsPlaying(!isPlaying);
   };
-
+  
+    //---> Gestore dell'aggiustamento del tempo
   const handleAdjustTime = (amount) => {
     if (!isPlaying) {
       setRemainingTime(prevTime => {
@@ -88,6 +130,7 @@ function YogaPage() {
     }
   };
 
+    //---> Stile della pagina
   const pageStyle = {
     background: `url('${selectedOption.image}') no-repeat center center fixed`,
     backgroundSize: 'cover',
@@ -115,9 +158,13 @@ function YogaPage() {
             formattedTime={formattedTime}
             isPlaying={isPlaying}
             handlePlayPauseClick={handlePlayPauseClick}
-            audioRef={audioRef}
+            handleAdjustTime={handleAdjustTime}
+            audioRef={audioRef} 
             selectedOption={selectedOption}
-          />
+            counterFinished={counterFinished}
+            setCounterFinished={setCounterFinished}
+            setRemainingTime={setRemainingTime}
+/>
         </>
       )}
     </div>

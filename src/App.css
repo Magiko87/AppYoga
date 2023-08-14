@@ -71,15 +71,7 @@
   box-shadow: 0px 4px 7px rgba(0, 0, 0, 1.1);
 }
 
-.normal-button:hover,
-.hard-button:hover,
-.very-hard-button:hover,
-.soft-button:hover,
-.very-soft-button:hover {
-  background-color: #b33900;
-  color: yellow;
-  transform: scale(1.2);
-}
+
 .footer {
   color: rgb(0, 0, 0);
   display: flex;
@@ -100,14 +92,7 @@
   
 }
 
-.normal-button:active,
-.hard-button:active,
-.very-hard-button:active,
-.soft-button:active,
-.very-soft-button:active {
-  background-color: rgb(234, 215, 75);
-  color: #ff0000;
-}
+
 .home-button{
  width: 100px;
  height: 50px;
@@ -127,19 +112,7 @@
   transition: background-color 0.3s ease, transform 0.3s ease;
   
 }
-.home-button:hover{
-  background-color: white;
-  color: black;
-  cursor: pointer;
-  transition: background-color 0.3s ease;
-  transform:scale(0.8);
-  box-shadow: 0px 2px 4px rgba(0, 0, 0, 1.1);
-}
-.home-button:active{
-  background-color: black;
-  color: white;
-  
-}
+
 .big-counter{
   color: rgba(255, 255, 255, 0.50);
   font-weight: 900;
@@ -171,18 +144,8 @@
   justify-content: center;
   align-items: center;
 }
-.btn-rem:hover,
-.btn-add:hover{
-  background-color: white;
-  color: black;
-  box-shadow: 0px 4px 7px rgba(0, 0, 0, 1.1);
-  }
 
-.btn-rem:active,
-.btn-add:active{
-  background-color: black;
-  color: white;
-}
+
 
 .btn-play-pause{width:100px;
   height: 30px;
@@ -201,46 +164,98 @@
  
   
 }
-
-.btn-play-pause:hover{
-  background-color: white;
-  color: black;
-  box-shadow: 0px 4px 7px rgba(0, 0, 0, 1.1);
-}
-.btn-play-pause:active{
-  background-color: black;
-  color: white;
-}
-
-@media screen and (max-width: 768px) {
+@media screen and (min-width: 768px) {
   .btn-play-pause:hover,
   .btn-add:hover,
-  .btn-rem:hover,
-  .home-button:hover,
+  .btn-rem:hover{
+    background-color: white;
+    color:black;
+    box-shadow: 0px 4px 7px rgba(0, 0, 0, 1.1);
+
+  }
+  .home-button:hover {
+   background-color: white;
+  color: black;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  transform:scale(0.8);
+  box-shadow: 0px 2px 4px rgba(0, 0, 0, 1.1);
+
+  }
+
   .normal-button:hover,
   .hard-button:hover,
   .very-hard-button:hover,
   .soft-button:hover,
-  .very-soft-button:hover ,
+  .very-soft-button:hover {
+    background-color: #b33900;
+    color: yellow;
+    transform: scale(1.2);
+
+  }
   .btn-play-pause:active,
   .btn-add:active,
-  .btn-rem:active,
-  .home-button:active,
+  .btn-rem:active{
+    background-color: black;
+    color: white;
+
+  }
+  .home-button:active{
+    background-color: black;
+    color: white;
+
+  }
   .normal-button:active,
   .hard-button:active,
   .very-hard-button:active,
   .soft-button:active,
-  .very-soft-button:active 
-   {
-    background-color: transparent !important;
-    color: rgba(0, 0, 0, 0.379) !important;
-    box-shadow:none !important;
-    
-  }
-  .container {
-      margin-top: 50px; 
-  }
+  .very-soft-button:active{
+    background-color: rgb(234, 2 15, 75);
+    color: #ff0000;
+   }
 }
-/*Toglie dai dispositivi mobile active e hover 
-(background-color: transparent;
-color: inherit;)*/
+
+  @media screen and (max-width: 768px) {
+    body {
+      padding: 20px;
+    }
+    .logo-container {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+    .button-container {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+    .very-soft-button,
+    .soft-button,
+    .normal-button,
+    .hard-button,
+    .very-hard-button {
+      width: 100%;
+      max-width: 250px;
+      margin: 10px 0;
+    }
+    .App-logo{
+      width: 150px;
+      height: 150px;
+    }
+    .App-img{
+      margin-top: -70px;
+      margin-bottom: -20px;
+      
+    }
+    .big-counter {
+      font-size: 6rem;
+    }
+    .footer{
+      margin-top: -20px;
+   
+    }
+    
+  
+    
+  
+}

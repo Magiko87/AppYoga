@@ -7,16 +7,24 @@ import React, { useState } from 'react';
 
 //---> Componente App
 function App() {
+
+  //---> Stato per il caricamento
   const [isLoading, setIsLoading] = useState(false); // Stato per il caricamento
 
   return (
     <div className="App">
+
+      {/* --->Intestazione dell'app con logo e pulsanti */}
       <header className="App-header">
         <div className="logo-container">
+
+            {/* --->Immagine logo */}
           <img src={img} className="App-img" alt="img" />
           <img src={logo} className="App-logo" alt="logo" />
         </div>
         <div className="button-container">
+
+          {/*---> Pulsanti per le diverse opzioni di stress */}
           <Link to={`/yogapage/1`} onClick={() => setIsLoading(true)}>
             <button className="very-soft-button">Very Soft Stress</button>
           </Link>
