@@ -217,7 +217,7 @@
 
   @media screen and (max-width: 768px) {
     body {
-      padding: 20px;
+      padding: 5px;
     }
     .logo-container {
       display: flex;
