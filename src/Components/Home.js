@@ -4,6 +4,7 @@ import logo from "../assets/img/g1Y8.gif"
 import img from "../assets/img/img.png";
 import { Link } from "react-router-dom";
 import React, { useState } from "react";
+import Loader from "./Loader";
 
 //---> Componente App ...
 function App() {
@@ -39,6 +40,7 @@ function App() {
           </Link>
         </div>
       </header>
+      {isLoading && <Loader />}
       <footer className="footer">
         <p> &copy; Daniele Camodeca-®Copyright </p>
       </footer>
