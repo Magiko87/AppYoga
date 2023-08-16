@@ -20,7 +20,7 @@ import ForestSong from "../assets/songs/forest.mp3";
 import RainSong from "../assets/songs/rain.mp3";
 import FireSong from "../assets/songs/fire.mp3";
 
-//---> Definizione delle opzioni di yoga
+//---> Definizione delle opzioni di Yoga
 const yogaOptions = [
   { id: 1, image: LakeImage, music: LakeSong, duration: 600 },
   { id: 2, image: SeaImage, music: SeaSong, duration: 1200 },
