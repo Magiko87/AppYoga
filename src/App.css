@@ -1,6 +1,7 @@
 .App {
   text-align: center;
-  margin-top: -25px;
+
+  
 }
 
 .App-header {
@@ -85,7 +86,9 @@
     rgba(255, 239, 21, 1) 100%
  
   );
-  border-bottom :120px;
+margin-top: -30px;
+
+  
   
   
 }
