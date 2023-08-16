@@ -50,7 +50,7 @@ function YogaPage() {
   //---> Stati per il caricamento delle immagini e la durata iniziale
   const [isLoading, setIsLoading] = useState(true);
   const [imagesLoaded, setImagesLoaded] = useState(false);
-  const [initialDuration, setInitialDuration] = useState(selectedOption.duration);
+  const [initialDuration, ] = useState(selectedOption.duration);
 
     //---> Effetto per il caricamento delle immagini
 
