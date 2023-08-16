@@ -3,10 +3,9 @@
 //---> Import delle librerie React e componenti React Router
 import React, { useState } from "react";
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
-import Home from "./components/Home";
 import YogaPage from "./components/YogaPage";
 import Loader from "./components/Loader";
-
+import Home from './components/Home';
 //---> Componente principale dell'app
 function App() {
   //---> Stato per gestire il caricamento
