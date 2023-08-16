@@ -5,7 +5,7 @@ import img from "../assets/img/img.png";
 import { Link } from 'react-router-dom';
 import React, { useState } from 'react';
 
-//---> Componente App
+//---> Componente App ...
 function App() {
 
   //---> Stato per il caricamento
