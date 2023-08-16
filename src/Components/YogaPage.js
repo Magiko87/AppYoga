@@ -1,4 +1,4 @@
-//====>Component YogaPage
+//====>Component YogaPage.
 
 //--->Import!
 import React, { useState, useRef, useEffect } from 'react';
