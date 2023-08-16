@@ -1,6 +1,6 @@
-//====>Component YogaPaga
+//====>Component YogaPage
 
-//--->Import
+//--->Import.
 import React, { useState, useRef, useEffect } from 'react';
 import { useParams } from 'react-router-dom';
 import Timer from './Timer';
