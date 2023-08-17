@@ -6,7 +6,7 @@ import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import YogaPage from "./componenti/YogaPage";
 import Loader from "./componenti/Loader";
 import Home from './componenti/Home';
-//---> Componente principale dell'app
+//---> Componente principale dell'app.
 function App() {
   //---> Stato per gestire il caricamento
   const [isLoading, setIsLoading] = useState(false);
