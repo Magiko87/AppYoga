@@ -8,17 +8,17 @@ import ControlButtons from './ControlButtons';
 import YogaContent from './YogaContent';
 import Loader from './Loader';
 
-import LakeImage from "../assets/img/lake.jpeg";
-import SeaImage from "../assets/img/sea.jpeg";
-import ForestImage from "../assets/img/forest.jpeg";
-import RainImage from "../assets/img/rain.jpeg";
-import FireImage from "../assets/img/fire.jpeg";
+import LakeImage from "../asset/img/lake.jpeg";
+import SeaImage from "../asset/img/sea.jpeg";
+import ForestImage from "../asset/img/forest.jpeg";
+import RainImage from "../asset/img/rain.jpeg";
+import FireImage from "../asset/img/fire.jpeg";
 
-import LakeSong from "../assets/songs/lake.mp3";
-import SeaSong from "../assets/songs/sea.mp3";
-import ForestSong from "../assets/songs/forest.mp3";
-import RainSong from "../assets/songs/rain.mp3";
-import FireSong from "../assets/songs/fire.mp3";
+import LakeSong from "../asset/songs/lake.mp3";
+import SeaSong from "../asset/songs/sea.mp3";
+import ForestSong from "../asset/songs/forest.mp3";
+import RainSong from "../asset/songs/rain.mp3";
+import FireSong from "../asset/songs/fire.mp3";
 
 //---> Definizione delle opzioni di Yoga
 const yogaOptions = [
