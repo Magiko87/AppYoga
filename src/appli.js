@@ -6,13 +6,18 @@ import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import YogaPage from "./componenti/YogaPage";
 import Loader from "./componenti/Loader";
 import Home from './componenti/Home';
+import classNames from 'classnames';
+
 //---> Componente principale dell'app.
 function App() {
   //---> Stato per gestire il caricamento
   const [isLoading, setIsLoading] = useState(false);
 
+  const appClasses = classNames('App', { 'loading': isLoading });
+
   return (
-    <div className="App">
+    <div className={appClasses}>
+
       {/* --->Configurazione del router */}
       <Router>
         <Routes>

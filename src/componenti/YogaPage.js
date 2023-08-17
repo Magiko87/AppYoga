@@ -7,18 +7,19 @@ import Timer from './Timer';
 import ControlButtons from './ControlButtons';
 import YogaContent from './YogaContent';
 import Loader from './Loader';
-
+//--->Import jpeg
 import LakeImage from "../asset/img/lake.jpeg";
 import SeaImage from "../asset/img/sea.jpeg";
 import ForestImage from "../asset/img/forest.jpeg";
 import RainImage from "../asset/img/rain.jpeg";
 import FireImage from "../asset/img/fire.jpeg";
-
+//--->Import mp3
 import LakeSong from "../asset/songs/lake.mp3";
 import SeaSong from "../asset/songs/sea.mp3";
 import ForestSong from "../asset/songs/forest.mp3";
 import RainSong from "../asset/songs/rain.mp3";
 import FireSong from "../asset/songs/fire.mp3";
+import { Helmet } from "react-helmet";
 
 //---> Definizione delle opzioni di Yoga
 const yogaOptions = [
@@ -129,6 +130,14 @@ function YogaPage() {
       });
     }
   };
+  const titleMappings = {
+    1: "Lake",
+    2: "Sea",
+    3: "Forest",
+    4: "Rain",
+    5: "Fire"
+  };
+
 
     //---> Stile della pagina
   const pageStyle = {
@@ -143,6 +152,24 @@ function YogaPage() {
 
   return (
     <div style={pageStyle} className="yoga-page">
+     <Helmet>
+  {selectedOption.id === 1 && (
+    <title>{`VerySoft- ${titleMappings[1]} - Yoga App`}</title>
+  )}
+  {selectedOption.id === 2 && (
+    <title>{`Soft- ${titleMappings[2]} - Yoga App`}</title>
+  )}
+  {selectedOption.id === 3 && (
+    <title>{`Normal- ${titleMappings[3]} - Yoga App`}</title>
+  )}
+  {selectedOption.id === 4 && (
+    <title>{`Hard- ${titleMappings[4]} - Yoga App`}</title>
+  )}
+  {selectedOption.id === 5 && (
+    <title>{`VeryHard- ${titleMappings[5]} - Yoga App`}</title>
+  )}
+</Helmet>
+
       {isLoading || !imagesLoaded ? (
         <Loader />
       ) : (
