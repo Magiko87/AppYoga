@@ -1,6 +1,6 @@
 //---> Import di stili CSS e risorse come immagini
 import "../style.css"
-import logo from "../asset/img/g1Y8.gif"
+import logo from "../asset/img/g1Y8.gif";
 import img from "../asset/img/img.png";
 import { Link } from "react-router-dom";
 import React, { useState } from "react";
