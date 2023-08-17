@@ -5,6 +5,7 @@ import img from "../asset/img/img.png";
 import { Link } from "react-router-dom";
 import React, { useState } from "react";
 import Loader from "./Loader";
+import { Helmet } from "react-helmet";
 
 //---> Componente App ...
 function App() {
@@ -13,6 +14,9 @@ function App() {
 
   return (
     <div className="App">
+      <Helmet>
+        <title>Home-Yoga App </title>
+      </Helmet>
       {/* --->Intestazione dell'app con logo e pulsanti */}
       <header className="App-header">
         <div className="logo-container">
